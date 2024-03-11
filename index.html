@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Person selector: this contains buttons for user to select whether to chat as yogi or vicky -->
+    <div class="person-selector">
+      <button class="button person-selector-button active-person" id="yogi-selector">yogi</button>
+      <button class="button person-selector-button" id="vicky-selector">vicky</button>
+    </div>
+    <div class="chat-container">
+      <h2 class="chat-header">yogi chatting...</h2>
+
+      <div class="chat-messages">
+        <div class="message blue-bg">
+          <div class="message-sender">yogi</div>
+          <div class="message-text">Hey vicky, what's up?</div>
+          <div class="message-timestamp"><p id="datetime"></p></div>
+        </div>
+        <div class="message gray-bg">
+          <div class="message-sender">vicky</div>
+          <div class="message-text">Not much, just living the dream. How about you?</div>
+          <div class="message-timestamp"><p id="datetime2"></p></div>
+        </div>
+      </div>
+      <div class="box">
+        <select id="voiceList">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
+          <option>Option 5</option>
+        </select>
+      </div>
+
+      <form class="chat-input-form">
+        <input id="input" type="text" class="chat-input" required placeholder="Type here, yogi..." />
+        <button id="buttonOne" type="submit" class="button send-button">Send</button>
+      </form>
+      <button class="button clear-chat-button">Clear Chat</button>
+    </div>
+
+
+    <script>
+      const timestamp = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+      document.getElementById("datetime").innerHTML = timestamp;
+      document.getElementById("datetime2").innerHTML = timestamp;
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
